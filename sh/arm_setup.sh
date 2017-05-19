@@ -1,0 +1,5 @@
+PREFIX=~/armtools
+
+PATH=$PATH:$PREFIX/bin
+LD_LIBRARY_PATH=$PREFIX/lib
+PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig

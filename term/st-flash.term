@@ -1,0 +1,21 @@
+❯❯❯❯ st-flash write build/blinky.bin 0x8000000           projects/blinky master
+st-flash 1.3.1-17-g5c10d4b
+2017-05-17T22:55:11 INFO src/common.c: Loading device parameters....
+2017-05-17T22:55:11 INFO src/common.c: Device connected is: F4 device (Dynamic E
+fficency), id 0x10006433
+2017-05-17T22:55:11 INFO src/common.c: SRAM size: 0x18000 bytes (96 KiB), Flash:
+ 0x80000 bytes (512 KiB) in pages of 16384 bytes
+2017-05-17T22:55:11 INFO src/common.c: Attempting to write 5028 (0x13a4) bytes t
+o stm32 address: 134217728 (0x8000000)
+Flash page at addr: 0x08000000 erased
+2017-05-17T22:55:12 INFO src/common.c: Finished erasing 1 pages of 16384 (0x4000
+) bytes
+2017-05-17T22:55:12 INFO src/common.c: Starting Flash write for F2/F4/L4
+2017-05-17T22:55:12 INFO src/flash_loader.c: Successfully loaded flash loader in
+ sram
+enabling 32-bit flash writes
+size: 5028
+2017-05-17T22:55:12 INFO src/common.c: Starting verification of write complete
+2017-05-17T22:55:12 INFO src/common.c: Flash written and verified! jolly good!
+❯❯❯❯                                                     projects/blinky master
+
