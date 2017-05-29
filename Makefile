@@ -1,11 +1,11 @@
-FILES = md/title.md \
-				md/begin.md \
-				sh/arm_setup.sh \
+FILES = md/begin.md \
+				md/gcc.md \
 				md/stlink.md \
-				sh/st-link-install.sh \
 
 OUTPUT = stmenv.pdf
 
 all:
 	cat $(FILES) | pandoc -f markdown -o $(OUTPUT)
+	pdfunite temp/title.pdf stmenv.pdf seminarski.pdf
+
 

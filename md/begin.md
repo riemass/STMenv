@@ -59,10 +59,6 @@ opensource verziju.
 Debugiranje mikrokontrolera se takoder vrsi komunicirajuci sa ovim cipom, ovim 
 alatom. TODO sastavit ovu recenicu malo bolje
 
-TODO u instalaciji nakon podesavanja alata pokusat spojit plocu i
-reci st-util
-TODO ubacit terminal recording
-
 # Biblioteke
 
 TODO rec nesto o link skriptama i CubeMX-u
