@@ -1,0 +1,29 @@
+┌──Register group: general─────────────────────────────────────────────────────┐
+│r0             0x40020000       1073872896                                    │
+│r1             0x20017fdc       536969180                                     │
+│r2             0x0      0                                                     │
+│r3             0x10     16                                                    │
+│r4             0x0      0                                                     │
+│r5             0x0      0                                                     │
+│r6             0x0      0                                                     │
+│r7             0x20017ff8       536969208                                     │
+   ┌──Src/main.c───────────────────────────────────────────────────────────────┐
+   │85        /* USER CODE BEGIN WHILE */                                      │
+   │86        while (1)                                                        │
+   │87        {                                                                │
+   │88        /* USER CODE END WHILE */                                        │
+B+>│89          HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);                  │
+   │90          HAL_Delay(500);                                                │
+   │91                                                                         │
+   │92        /* USER CODE BEGIN 3 */                                          │
+   └───────────────────────────────────────────────────────────────────────────┘
+remote Thread <main> In: main                               L89   PC: 0x8000340
+
+Breakpoint 1, main () at Src/main.c:72
+(gdb) b 89
+Breakpoint 2 at 0x8000340: file Src/main.c, line 89.
+(gdb) c
+Continuing.
+
+Breakpoint 2, main () at Src/main.c:89
+(gdb)

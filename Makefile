@@ -1,11 +1,8 @@
-FILES = md/begin.md \
-				help/bash_begin.md \
+FILES = md/title.md \
+				md/begin.md \
 				sh/arm_setup.sh \
-				help/bash_end.md \
 				md/stlink.md \
-				help/bash_begin.md \
 				sh/st-link-install.sh \
-				help/bash_end.md
 
 OUTPUT = stmenv.pdf
 

@@ -1,0 +1,21 @@
+   ┌──startup/startup_stm32f401xe.s────────────────────────────────────────────┐
+   │76          .section  .text.Reset_Handler                                  │
+   │77        .weak  Reset_Handler                                             │
+   │78        .type  Reset_Handler, %function                                  │
+   │79      Reset_Handler:                                                     │
+  >│80        ldr   sp, =_estack                     /* set stack pointer */   │
+   │81                                                                         │
+   │82      /* Copy the data segment initializers from flash to SRAM */        │
+   │83        movs  r1, #0                                                     │
+   │84        b  LoopCopyDataInit                                              │
+   │85                                                                         │
+   │86      CopyDataInit:                                                      │
+   └───────────────────────────────────────────────────────────────────────────┘
+remote Thread <main> In: Reset_Handler                      L80   PC: 0x80012d4
+(gdb)
+
+
+
+
+
+

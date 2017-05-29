@@ -1,0 +1,29 @@
+┌──Register group: general─────────────────────────────────────────────────────┐
+│r0             0x20000004       536870916                                     │
+│r1             0x4      4                                                     │
+│r2             0x8000000        134217728                                     │
+│r3             0x0      0                                                     │
+│r4             0x0      0                                                     │
+│r5             0x0      0                                                     │
+│r6             0x0      0                                                     │
+│r7             0x20017ff8       536969208                                     │
+   ┌──Src/main.c───────────────────────────────────────────────────────────────┐
+   │69        /* MCU Configuration---------------------------------------------│
+   │70                                                                         │
+   │71        /* Reset of all peripherals, Initializes the Flash interface and │
+B+>│72        HAL_Init();                                                      │
+   │73                                                                         │
+   │74        /* Configure the system clock */                                 │
+   │75        SystemClock_Config();                                            │
+   │76                                                                         │
+   └───────────────────────────────────────────────────────────────────────────┘
+remote Thread <main> In: main                               L72   PC: 0x8000334
+(gdb) layout regs
+(gdb) b main
+Breakpoint 1 at 0x8000334: file Src/main.c, line 72.
+(gdb) c
+Continuing.
+Note: automatically using hardware breakpoints for read-only addresses.
+
+Breakpoint 1, main () at Src/main.c:72
+(gdb)
