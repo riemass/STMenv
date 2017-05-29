@@ -86,24 +86,4 @@ TODO pomjerit ovo negdje drugo
 komanda za prenos programa na plocu:
 st-flash write build/blinky.bin 0x8000000 
 
-# Postupak instalacije
-
-Instalaciju vršimo u proizvoljni direktorij.
-Preuzeti kompajlerski lanac sa ARM stranice 
-
-``` bash
-mkdir ~/armtools
-tar xf arm-none-eaby-gcc-CXXXXXXXX
-cp arm-none-eaby-XXXXX/* ~/armtools
-```
-
-u folderu instalacije(~/armtools) kreirati skriptu sa sledecim sadrzajem:
-
-
-``` bash
-source ~/armtools/arm_tools
-
-```
-
-TODO objasnit sta skripta radi i zasto
 
