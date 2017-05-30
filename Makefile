@@ -1,11 +1,13 @@
 FILES = md/begin.md \
 				md/gcc.md \
 				md/stlink.md \
+				md/debug.md \
 
 OUTPUT = stmenv.pdf
 
 all:
-	cat $(FILES) | pandoc -f markdown -o $(OUTPUT)
-	pdfunite temp/title.pdf stmenv.pdf seminarski.pdf
+	cat $(FILES) | pandoc -V geometry:margin=1in -f markdown -o temp.pdf 
+	pdfunite temp/title.pdf temp.pdf $(OUTPUT)
+	rm -rf temp.pdf 
 
 
