@@ -202,21 +202,32 @@ vam je ljepše). Ukoliko nemate externi RAM, specifikaciju memorijskog prostora
 Ovo su sve osnovne bitne informacije koje je potrebno da bi producirali svoju 
 link skriptu koja će raditi sa vašim mikrokontrolerom.
 
-# Automatizacija kompajliranja
+# Automatizacija kompajliranja i Makefile
 
-TODO
-reci nesto o GNU Make-u
-U postupku instalacija preuzeti git repo https://github.com/baoshi/CubeMX2Makefile
-simlink do skripte u armtools/bin
-TODO kasnije 
-Makefile nece kompajlirati (bar ne na zsh i bashu) projekat jer
-se u definiciji weak macroa escape backshashom escapeaju
-karakteri koji po pravilu ne moraju biti escapani
-projemnit jednu liniju koda tako da nema backslasha
-eventualno pull request baoshiju dat
+Automatizacija kompajliranja je proces automatizacije kreiranja softvera i dodatnih
+procesa uključujući kompajliranje izvornog koda u mašinski i linkanje izvornog
+koda. Postoji dosta build jezika koji nam olakšavaju pokretanje svih potrebnih
+zadataka da bi na kraju dobili izvršni file. Najkorisniji build jezik je GNU 
+Makefile koji riješava sve probleme automatizacije kompajliranja, ali sposoban je
+i za više od toga. Može se koristiti da se specificiraju ovisnosti između komponenti
+tako da se komponente kompajliraju u određenom redoslijedu zadovoljavajući ove
+ovisnosti. Veoma važna karakteristika Make-a je rekompajliranje izmjena. Make će
+rekompajlirati samo one fajlove koji su izmjenjeni i sve komponente koje zavise
+od komponente kojoj pripada dati fajl. Ovo zna uštediti jako puno vremena tako da
+Make predstavlja esencijalni alat za veće softverske projekte.
 
-TODO pomjerit ovo negdje drugo
-komanda za prenos programa na plocu:
-st-flash write build/blinky.bin 0x8000000 
+Osim automatizacije kompajliranja, Make ima mogućnost i automatizacije svega što
+treba odraditi kroz terminal, to uključuje i flash-vanje, prebacivanje programa
+na razvojnu ploču, pa čak i automatizaciju testiranja. Jasno je da Make predstavlja
+jedan vrlo moćan alat i samo mali djelić toga se može opisati u jednom poglavlju
+seminarskog rada. Postoje kompletne knjige koje su napisane za korištenje Make-a.
 
-
+Da bi pokrenuli makefile skriptu potrebno je ukucati komandu 
+```
+make
+```
+u terminal, nakon čega se pokreće Make aplikacija koja traži file pod imenom
+*makefile*, *Makefile* ili *GNUMakefile* te konstruiše stablo ovisnosti na osnovu
+specificiranog targeta. Ukoliko se ne specificira target Make po defaultu pokreće
+prvi target iz našeg Makefile-a. Za sintaksu i detalje o Makefile-u postoji jako
+puno online dokumentacije koju nije moguće nadjačati u jednom radu.
