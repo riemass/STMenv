@@ -1,10 +1,10 @@
 # Postupak instalacije
 
-Postupak instalacije cemo demonstrirati u proizvoljnom direktoriju, kako bi 
-lakse imali uvid u snimljene komponente, lakse ih nadogradili, a pri tome ostavili
-sistemske direktorije cistim.
+Postupak instalacije ćemo demonstrirati u proizvoljnom direktoriju, kako bi 
+lakše imali uvid u snimljene komponente, lakše ih nadogradili, a pri tome ostavili
+sistemske direktorije čistim.
 
-Odabrani direktorij ce biti u home folderu, nazvan armtools. 
+Odabrani direktorij će biti u home folderu, nazvan armtools. 
 
 Preuzeti kompajlerski lanac sa ARM-ove stranice:
 [https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads]
@@ -17,7 +17,7 @@ cp arm-none-eaby-XXXXXX/* ~/armtools
 ```
 Napomena: XXXXXX zamijeniti imenom preuzetog filea, predstavlja broj verzije.
 
-U folderu instalacije(~/armtools) kreirati skriptu sa sledecim sadrzajem:
+U folderu instalacije(~/armtools) kreirati skriptu sa sljedećim sadržajem:
 
 ``` bash
 PREFIX=~/armtools
@@ -28,7 +28,7 @@ PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig
 ```
 
 Nakon toga, ukoliko skriptu nazovemo arm_tools.sh, sve aplikacije i biblioteke
-moguce je ukljuciti u trenutnu terminal sesiju komandom:
+moguće je uključiti u trenutnu terminal sesiju komandom:
 
 ``` bash
 source ~/armtools/arm_tools.sh

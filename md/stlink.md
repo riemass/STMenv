@@ -1,7 +1,7 @@
 # Instalacija stlink alata
 
-stlink alat se razvija na githubu, odakle je moguce preuzeti najnoviju verziju,
-obicno se preuzme u neki genericki folder, npr ~/gitstuff, odakle cemo je instalirati
+stlink alat se razvija na githubu, odakle je moguće preuzeti najnoviju verziju,
+obično se preuzme u neki generički folder, npr ~/gitstuff, odakle ćemo je instalirati
 u ranije kreirani ~/armtools folder.
 
 ``` bash
@@ -19,10 +19,10 @@ make
 sudo make install
 ```
 
-Nakon instalacije potrebno je ponovo ucitati dijeljene biblioteke,
-osvjeziti udev pravila, koja definiraju kako racunar prepoznaje i komunicira sa 
-vanjskim uredajime, te na kraju dodati svog korisnika u grupu koristnika stlink
-kako bi imali privilegije komunikacije sa plocom.
+Nakon instalacije potrebno je ponovo učitati dijeljene biblioteke,
+osvježiti udev pravila, koja definiraju kako računar prepoznaje i komunicira sa 
+vanjskim uređajima, te na kraju dodati svog korisnika u grupu korisnika stlink
+kako bi imali privilegije komunikacije sa pločom.
 
 ``` bash
 source ~/armtools/arm_setup.sh
@@ -40,15 +40,15 @@ Nakon toga, potrebno se izlogovati i ponovo ulogovati.
 
 # Testiranje okruženja
 
-Ukoliko je sve instalirano kako treba, nakon ucitavanja okruženja u terminal 
-sesiju moguce je pokrenuti gcc i stlink.
-Pokušati sledeće komande:
+Ukoliko je sve instalirano kako treba, nakon učitavanja okruženja u terminal 
+sesiju moguće je pokrenuti gcc i stlink.
+Pokušati sljedeće komande:
 
 ``` bash
 source ~/armtools/arm_setup.sh
 ```
 
-Ukoliko je gcc pravilno instaliran, moguce ga je pokrenuti u terminalu sledećom
+Ukoliko je gcc pravilno instaliran, moguće ga je pokrenuti u terminalu sljedećom
 komandom:
 ``` bash
 $ arm-none-eabi-gcc --version                                                                                 projects/STMenv master
@@ -58,7 +58,7 @@ Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 ```
 
-Nakon spajanja ploče USB kablom, usjpešno konektovanje ce rezultovati 
+Nakon spajanja ploče USB kablom, uspješno konektovanje će rezultovati 
 ispisom komande st-util 
 ``` bash
 $ st-util                                                    projects/STMenv
