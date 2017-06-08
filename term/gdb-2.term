@@ -1,22 +1,29 @@
-❯❯❯❯ arm-none-eabi-gdb                                   projects/blinky master
-GNU gdb (GNU Tools for ARM Embedded Processors 6-2017-q1-update) 7.12.1.20170215
--git
-Copyright (C) 2017 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "--host=x86_64-linux-gnu --target=arm-none-eabi".
-Type "show configuration" for configuration details.
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>.
-Find the GDB manual and other documentation resources online at:
-<http://www.gnu.org/software/gdb/documentation/>.
-For help, type "help".
-Type "apropos word" to search for commands related to "word".
-(gdb) target remote localhost:4242
-Remote debugging using localhost:4242
-warning: No executable has been specified and target does not support
-determining executable automatically.  Try using the "file" command.
-0x080012d4 in ?? ()
+┌──Register group: general─────────────────────────────────────────────────────┐
+│r0             0x20000004       536870916                                     │
+│r1             0x4      4                                                     │
+│r2             0x8000000        134217728                                     │
+│r3             0x0      0                                                     │
+│r4             0x0      0                                                     │
+│r5             0x0      0                                                     │
+│r6             0x0      0                                                     │
+│r7             0x20017ff8       536969208                                     │
+   ┌──Src/main.c───────────────────────────────────────────────────────────────┐
+   │69        /* MCU Configuration---------------------------------------------│
+   │70                                                                         │
+   │71        /* Reset of all peripherals, Initializes the Flash interface and │
+B+>│72        HAL_Init();                                                      │
+   │73                                                                         │
+   │74        /* Configure the system clock */                                 │
+   │75        SystemClock_Config();                                            │
+   │76                                                                         │
+   └───────────────────────────────────────────────────────────────────────────┘
+remote Thread <main> In: main                               L72   PC: 0x8000334
+(gdb) layout regs
+(gdb) b main
+Breakpoint 1 at 0x8000334: file Src/main.c, line 72.
+(gdb) c
+Continuing.
+Note: automatically using hardware breakpoints for read-only addresses.
+
+Breakpoint 1, main () at Src/main.c:72
 (gdb)
