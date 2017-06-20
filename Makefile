@@ -10,4 +10,7 @@ all:
 	pdfunite temp/title.pdf temp.pdf $(OUTPUT)
 	rm -rf temp.pdf 
 
+docs:
+	cat $(FILES) > index.md
+	mv index.md ./docs/
 
