@@ -95,3 +95,45 @@ heksadecimalni ispis, i - ispis instrukcija, s - null terminirani string...) te
 U predstavlja veličinu memorijske jedinice za prikaz (b - byte, h - half word, 
 w - word, g - giand word).
 
+# Primjer debug sesije za blinky
+
+Pretpostavimo da smo u folderu projekta. Pokrenimo u jednom terminalu
+st-util alat, a u drugom gdb na način opisan iznad.
+
+Nakon spajanja i učitavanja simbola, STM je zaleđen u init kodu reset handlera.
+U većini slučajeva ovaj kod je potrebno preskočiti i doći do maina. 
+To možemo uraditi na način da postavimo breakpoint na main funkciju i naredimo 
+kontroleru da izvrši sve instrukcije do narednog brakepointa, komandama:
+```
+breakpoint main
+continue
+```
+ili kraće
+```
+b main
+c
+```
+Sada je kontoler zaleđen u prvoj instrukciji main funkcije. Bilo bi korisno da 
+vidimo stanje registara i izvorni kod programa, pa ćemo izmijeniti layout sledećim
+naredbama:
+```
+layout regs
+layout src
+```
+
+Izlaz u terminalu:
+
+TODO ubaciti sliku
+
+Strelicama je moguće navigirati kroz kod. Instrukcija koja pali LED se nalazi
+u liniji 89 koda, kako nam je ona od interesa postavićemo breakpoint na nju i 
+nastaviti izvršenje koda
+``` 
+b 89
+c
+```
+Sada ćemo izvrsiti tu naredbu tipkajući
+``` 
+n
+```
+LED na kontroleru bi trebala biti upaljena.

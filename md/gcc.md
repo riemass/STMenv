@@ -1,5 +1,8 @@
 # Postupak instalacije
 
+Postupak instalacije je isproban na Ubuntu i Arch linux distribucijama.
+Za primjere je korišten mikrokontroler STM32F401RE.
+
 Postupak instalacije ćemo demonstrirati u proizvoljnom direktoriju, kako bi 
 lakše imali uvid u snimljene komponente, lakše ih nadogradili, a pri tome ostavili
 sistemske direktorije čistim.
